@@ -1,0 +1,106 @@
+1-需要的素材
+	Eclipse
+	ADT(要压缩包)
+	Android SDK
+
+2-检测是否已经安装过
+	查看Eclipse里面的Window菜单，是否有安卓SDK和虚拟机
+3-安装开发环境
+	1-打开Eclipse里面的Help里面的Install new software
+	2-点击Add，弹出Add对话框。name里面填写adt,location里面选择adt.zip
+	3-然后next.安装好后需要重启Eclipse
+	4-重启Eclipse后，需要选择解压后SDK目录（千万注意：SDK目录不能含有中文，不能放置桌面）
+
+
+----------------------安卓项目文件夹解析----------------------------
+1-src：写JAVA源代码
+2-gen：自动生成后的文件(只读)。R.java
+3-bin: android应用编译后生成.apk文件放在这里
+4-libs：第三方的类库
+5-res:是资源文件（html/css/js/images）。
+	layout:XML文件。画面布局的文件
+	drawable-*：图片文件
+	values:预定义的值文件（样式）
+6-AndroidManifest.xml：整个安卓应用的核心配置文件
+
+作业：
+1-拖控件
+2-熟悉布局界面
+3-实现发送短信的界面
+4-实现掌上巡检项目*******
+
+1-实现发送短信的功能
+2-实现掌上巡检项目*******
+
+1-实现用户注册和登录
+2-实现掌上巡检项目
+
+1-复习第二阶段的课程
+2-试卷
+
+
+--------------------------------------------------
+A-->B
+Activity 存放在栈里面的（先进后出）
+
+Android是多线程的操作系统（应用打开过多，则系统资源占用就越多，可能回死机（当应用没有得到正确关闭））
+为了解决以上问题，Android 提供了生命周期机制
+
+运行Activity
+onCreate
+onStart
+onResume
+
+按返回键
+onPause
+onStop
+onDestory
+
+按HOME键
+onPause
+onStop
+
+按HOME键之后再次进入
+onRestart
+onStart
+onResume
+
+切换横屏后，方法：
+onSaveInstanceState
+onPause
+onStop
+onDestory
+onCreate
+onStart
+onRestoreInstanceSate
+onResume
+
+
+--7大方法：
+onCreate：（用于初始化设置，生命周期只会调用一次）1-设置布局；2-绑定UI、监听器
+onStart：活动可见，但是用户仍然未能获得焦点交互时候调用
+onResume：活动可见，但是用户可以获得焦点交互时候调用
+onRestart：活动停止然后重新被启动时候调用
+onPause：暂停的状态，还能看见，但是无法点击控件。一般用来保存数据
+onStop：当新的活动完全覆盖当前的，当前不可见时候调用
+onDestory：销毁内存时候调用（系统销毁）只会调用一次
+
+--4段生命周期
+1-完整生命周期 ：
+onCreate ->  onStart -> onResume
+-> onPause -> onStop -> onDestory
+
+2-可视周期：
+onStart -> onResume
+-> onPause -> onStop
+
+3-前台生命周期
+onResume
+-> onPause
+
+4-后台生命周期
+onPause
+->onStop
+
+
+
